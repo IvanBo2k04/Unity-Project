@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyScripts : MonoBehaviour
 {
-    public GameObject BackWall;
+    //public GameObject BackWall;
 
     PlayerScript player;
 
@@ -21,6 +21,6 @@ public class EnemyScripts : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) < 2f)
         {
             Destroy(gameObject);
-        }        
+        }
     }
 }

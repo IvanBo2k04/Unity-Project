@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBossScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //public GameObject BackWall;
+
+    PlayerScript player;
+
+    public float Speed;
+
     void Start()
     {
-        
+        player = GameObject.FindObjectOfType<PlayerScript>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        transform.Translate(-transform.forward * Time.deltaTime * Speed);
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 2f)
+        {
+            Destroy(gameObject);
+            Debug.Log("You Win");
+        }
     }
 }
+
