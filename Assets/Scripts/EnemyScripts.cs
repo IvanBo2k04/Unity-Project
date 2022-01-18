@@ -18,7 +18,7 @@ public class EnemyScripts : MonoBehaviour
     {
         transform.Translate(-transform.forward * Time.deltaTime * Speed);
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 2f)
+        if (Vector3.Distance(transform.position, player.transform.position) < 1f)
         {
             Destroy(gameObject);
         }

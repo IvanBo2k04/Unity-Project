@@ -16,5 +16,6 @@ public class SpawnerScript : MonoBehaviour
     public void ButtonClick()
     {
         GameObject spawner = Instantiate(Enemy, transform.position, Quaternion.identity) as GameObject;
+
     }
 }

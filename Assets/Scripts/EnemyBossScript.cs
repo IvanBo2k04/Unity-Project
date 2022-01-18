@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBossScript : MonoBehaviour
 {
-    //public GameObject BackWall;
+    Text Win;
 
     PlayerScript player;
 
@@ -11,6 +12,8 @@ public class EnemyBossScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerScript>();
+        Win = Text.FindObjectOfType<Text>();
+
     }
 
 
@@ -18,10 +21,10 @@ public class EnemyBossScript : MonoBehaviour
     {
         transform.Translate(-transform.forward * Time.deltaTime * Speed);
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 2f)
+        if (Vector3.Distance(transform.position, player.transform.position) < 1f)
         {
             Destroy(gameObject);
-            Debug.Log("You Win");
+            Win.text = "You win";
         }
     }
 }
