@@ -2,18 +2,12 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public Transform Forward;
-    public Transform Backward;
-    public Transform Left;
-    public Transform Right;
-
     public float Speed;
 
     void Start()
     {
-
+        gameObject.SetActive(false);
     }
-
 
     void Update()
     {

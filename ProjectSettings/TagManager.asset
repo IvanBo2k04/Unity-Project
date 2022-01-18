@@ -6,6 +6,9 @@ TagManager:
   tags:
   - EnemySpawner
   - Text
+  - Wall
+  - Enemy
+  - Enemy Mother
   layers:
   - Default
   - TransparentFX
