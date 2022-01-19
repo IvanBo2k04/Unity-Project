@@ -9,16 +9,12 @@ public class EnemyScripts : MonoBehaviour
 
     public Text text;
 
-    GameObject button;
-
     public Button WinButton;
     public Button LoseButton;
 
     void Start()
     {
         gameObject.SetActive(false);
-
-        button = GameObject.FindGameObjectWithTag("Win Button");
     }
 
     void Update()
