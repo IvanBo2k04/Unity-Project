@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Enemy
   - Enemy Mother
+  - Win Button
   layers:
   - Default
   - TransparentFX

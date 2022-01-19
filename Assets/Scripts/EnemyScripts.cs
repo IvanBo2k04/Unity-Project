@@ -9,9 +9,19 @@ public class EnemyScripts : MonoBehaviour
 
     public Text text;
 
+    GameObject button;
+
+    public Button WinButton;
+    public Button LoseButton;
+
     void Start()
     {
         gameObject.SetActive(false);
+
+        button = GameObject.FindGameObjectWithTag("Win Button");
+
+        
+
     }
 
     void Update()
@@ -30,8 +40,13 @@ public class EnemyScripts : MonoBehaviour
                 Destroy(go);
 
                 text.text = "You Lose";
+                
             }
+            PlayerScript.Destroy(GameObject.FindGameObjectWithTag("Player"));
+
+            LoseButton.gameObject.SetActive(true);
         }
+        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -46,9 +61,12 @@ public class EnemyScripts : MonoBehaviour
 
                 if (i == 0)
                 {
+                    PlayerScript.Destroy(GameObject.FindGameObjectWithTag("Player"));
                     text.text = "You Win";
+                    WinButton.gameObject.SetActive(true);
                 }
             }
         }
+        
     }
 }
